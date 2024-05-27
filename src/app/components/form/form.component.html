@@ -1,0 +1,108 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Employee Page</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="formbox col-4" *ngIf="ifneedAdd">
+        <div class="">
+            <h2>Add Employee<button class="btn btn-danger btnclose" (click)="closeAdd()">×</button></h2>
+            
+        </div>
+        <br><br>
+
+        <form  [formGroup]="employeeForm" (ngSubmit)="addEmployee()"  >
+          <div class="form-group">
+            <label for="firstName">First Name*</label>
+            <input type="text" id="firstName" class="form-control" formControlName="firstName">
+            
+           
+          </div>
+    
+          <div class="form-group">
+            <label for="firstName">Last Name*</label>
+            <input type="text" id="lastName" class="form-control" formControlName="lastName" >
+            
+          </div>
+    
+          <div class="form-group">
+            <label for="firstName">Email*</label>
+            <input type="text" id="email" class="form-control"  formControlName="email" >
+            
+          </div>
+    
+          <div class="form-group">
+            <label for="firstName">Phone*</label>
+            <input type="text" id="phone" class="form-control" formControlName="phone" >
+            <!-- <div *ngIf="employeeForm.get('phone')?.invalid && employeeForm.get('phone')?.touched" class="text-danger">
+              phone is required and Should be valid Mobile number
+            </div> -->
+          </div>
+    
+          <div class="form-group">
+            <label for="address">Address*</label>
+            <textarea type="text" id="address" class="form-control" formControlName="address" ></textarea>
+            <!-- <div *ngIf="employeeForm.get('address')?.invalid && employeeForm.get('address')?.touched" class="text-danger">
+              address is required
+            </div> -->
+          </div>
+
+          <div class="form-group">
+            <label for="salary">Monthly salary*</label>
+            <input type="number" id="salary" class="form-control" formControlName="salary" >
+            <!-- <div *ngIf="employeeForm.get('salary')?.invalid && employeeForm.get('salary')?.touched" class="text-danger">
+              Monthly Salary is required
+            </div> -->
+          </div>
+    
+          <div class="form-group">
+            <label for="description">Description*</label>
+            <textarea type="text" id="description" class="form-control" formControlName="description" ></textarea>
+            <!-- <div *ngIf="employeeForm.get('description')?.invalid && employeeForm.get('description')?.touched" class="text-danger">
+              Description is required
+            </div> -->
+          </div>
+          
+          <button type="submit" class="btn btn-success btnsubmit">Submit</button>
+        </form>
+      </div>
+    
+      
+      <div class="emptable" [ngClass]="ifneedAdd ? 'col-10' : 'col-12'"> 
+        <div class="">
+            <h2>Employee List<button class="btn btn-success addbtn" (click)="addNew()">+</button></h2>           
+        </div>  
+        <div class="table">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>phone</th>
+                <th>Address</th>
+                <th>Description</th>
+                <th>salary</th>
+                <th>Bonus</th>  
+                <th>Option</th>           
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let employee of employees">
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.phone}}</td>
+                <td>{{employee.address}}</td>
+                <td>{{employee.description}}</td>
+                <td>{{employee.salary}} LKR</td>
+                <td>{{employee.bonus}} LKR</td>   
+                <td><button class="btn btn-primary" (click)="openPopup(employee)">Update</button></td>
+              </tr>            
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+</div>

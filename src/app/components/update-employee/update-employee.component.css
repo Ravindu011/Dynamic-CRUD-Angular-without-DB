@@ -1,0 +1,35 @@
+.formbox{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    -webkit-box-shadow: -1px 3px 42px 3px rgba(0,0,0,0.32);
+    -moz-box-shadow: -1px 3px 42px 3px rgba(0,0,0,0.32);
+    box-shadow: -1px 3px 42px 3px rgba(0,0,0,0.32);
+}
+.btn{
+    margin: 10px;
+}
+
+.emptable{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    -webkit-box-shadow: -1px 3px 42px 3px rgba(0,0,0,0.32);
+    -moz-box-shadow: -1px 3px 42px 3px rgba(0,0,0,0.32);
+    box-shadow: -1px 3px 42px 3px rgba(0,0,0,0.32);
+}
+.btnclose{
+    float: right;
+    border-radius: 50%;
+
+}
+.feid{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.btn{
+    margin: 10px;
+}
